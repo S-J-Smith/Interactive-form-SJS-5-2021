@@ -1,4 +1,2 @@
-window.onload = function() {
-    document.getElementById("name").focus();
-}
+document.getElementById("name").focus();
 
