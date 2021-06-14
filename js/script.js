@@ -2,9 +2,12 @@
 const focusOnName = document.querySelector('#name').focus();
 const otherJobRole = document.querySelector('#other-job-role');
 const selectJobRole = document.querySelector('#title');
-const JobRoleOptions = document.querySelectorAll('#title option');
+const color = document.querySelector('#color');
+//console.log(color);
 //Hides the other job role text box.
 otherJobRole.hidden = true;
+//Disables the color dropdown.
+color.disabled = true;
 //Listens for when the Job Role dropdown box is changed and an option is selected.
 selectJobRole.addEventListener('change', e => {
     //Logs out to the console the value of the targeted event.
