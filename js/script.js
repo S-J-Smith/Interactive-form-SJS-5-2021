@@ -17,11 +17,8 @@ const colorOption = document.querySelectorAll('#color option');
 otherJobRole.hidden = true;
 //Disables the color dropdown.
 color.disabled = true;
-//set the selected option to true.
-const selectedDesign1 = designOption[1].selected = true;
-const selectedDesign2 = designOption[2].selected = true;
-//console.log(designOption[1].value);
-const selectedColor = colorOption[2].selected = true;
+// console.log(designOption[1].value);
+// const selectedColor = colorOption[2].selected = true;
 //console.log(selectedColor);
 //Listens for when the Job Role dropdown box is changed and an option is selected.
 selectJobRole.addEventListener('change', e => {
@@ -38,14 +35,23 @@ selectJobRole.addEventListener('change', e => {
 design.addEventListener('change', e => {
     //Logs out to the console the value of the targeted event.
     console.log(e.target.value);
+    color.disabled = false;
+    if (e.target.value == 'js puns') {
+        colorOption[4].hidden = true;
+        colorOption[5].hidden = true;
+        colorOption[6].hidden = true;
+    } else if (e.target.value == 'heart js') {
+        colorOption[1].hidden = true;
+        colorOption[2].hidden = true;
+        colorOption[3].hidden = true;
+    }
         /* If design option 1 is selected from the design drop down       
-                enable color drop down
                 only show color options for selected design
             else
                 design option 2 is selected from the design drop down
-                enable color drop down
                 only show color options for selected design
             endif
         */
+    
+});
 
- });
