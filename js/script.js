@@ -36,7 +36,12 @@ design.addEventListener('change', e => {
     //Logs out to the console the value of the targeted event.
     console.log(e.target.value);
     color.disabled = false;
+    // colorOption.hidden = true;
+    // console.log(colorOption);
     if (e.target.value == 'js puns') {
+        colorOption[1].hidden = false;
+        colorOption[2].hidden = false;
+        colorOption[3].hidden = false;
         colorOption[4].hidden = true;
         colorOption[5].hidden = true;
         colorOption[6].hidden = true;
@@ -44,14 +49,17 @@ design.addEventListener('change', e => {
         colorOption[1].hidden = true;
         colorOption[2].hidden = true;
         colorOption[3].hidden = true;
+        colorOption[4].hidden = false;
+        colorOption[5].hidden = false;
+        colorOption[6].hidden = false;
     }
         /* If design option 1 is selected from the design drop down       
-                only show color options for selected design
+                only show color options for selected design and hide the other color options.
             else
                 design option 2 is selected from the design drop down
-                only show color options for selected design
+                only show color options for selected design and hide the other color options.
             endif
         */
     
-});
+});S
 
