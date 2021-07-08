@@ -61,5 +61,37 @@ design.addEventListener('change', e => {
             endif
         */
     
-});S
+});
+
+
+//Listen for changes to the Register for Activities fieldset and update the paragraph element with the ID of 'activity-cost with the selected activities total cost.
+
+const checkboxes = document.querySelectorAll('#activities input');
+console.log(checkboxes);
+//    1/Create an event listener to listen for changes to the activities fieldset.
+document.querySelector('#activities').addEventListener('change', e => {
+    //    2/Create a variable called 'clicked' to store the input of the checked activity.
+    const clicked = e.target;
+    //    3/Log out the variable 'clicked' to the console to check it works.
+    console.log(clicked);
+    //    4/Create a variable named clickedtype to store the data-cost of the clicked checkbox.
+    const clickedType = clicked.getAttribute('data-cost');
+    //    5/ Log out the variable 'clickedType' to the console to check it works.
+    console.log(clickedType);
+    const total = document.querySelector('#activity-cost');
+    console.log(total); 
+    for (let i = 0; i < checkboxes.length; i ++) {
+        const checkboxType = checkboxes[i].getAttribute('data-cost');
+        console.log(checkboxType);
+        if (clickedType === checkboxType && clicked !== checkboxes[i]) {
+         if (clicked.checked) {
+            checkboxes[i] += total;
+        } else {
+            checkboxes[i] -= total;
+        }
+        }
+    }
+ });
+//    5/Update the P element with the id of 'activity-cost to reflect the chosen activities.
+
 
